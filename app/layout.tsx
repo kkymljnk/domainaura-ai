@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 // ── SEO Metadata ────────────────────────────────────────────────────────────────
@@ -100,6 +101,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {children}
                 {/* ── Vercel Analytics ──────────────────────────────────────────── */}
                 <Analytics />
+                {/* ── Vercel Speed Insights ─────────────────────────────────────── */}
+                <SpeedInsights />
                 {/* ── Toast notifications ───────────────────────────────────────── */}
                 <Toaster
                     position="top-right"
