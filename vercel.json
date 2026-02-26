@@ -1,0 +1,38 @@
+{
+    "version": 2,
+    "name": "domainaura-ai",
+    "framework": "nextjs",
+    "buildCommand": "npm run build",
+    "devCommand": "npm run dev",
+    "installCommand": "npm install",
+    "regions": [
+        "sin1"
+    ],
+    "headers": [
+        {
+            "source": "/api/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-store, max-age=0"
+                },
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)\\.(ico|png|jpg|jpeg|webp|avif|svg|woff|woff2)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        }
+    ],
+    "env": {
+        "NEXT_PUBLIC_APP_URL": "https://domainaura.ai"
+    }
+}
